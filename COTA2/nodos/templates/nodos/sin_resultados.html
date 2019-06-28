@@ -1,0 +1,35 @@
+{% extends "core/base.html" %}
+{% block title %}Nodos{% endblock title %}
+{% block action_resul %}{% url 'rNodos' %}{% endblock %}
+{% load static %}
+{% load class_name %}
+{% block head %}
+<script type="text/javascript" src="{% static 'nodos/data/books2.js' %}"></script>
+{% endblock %}
+
+{% block body %}draw();{% endblock %}
+
+<!--Content-->
+{% block content %}
+<input id="jsonh" type="hidden" name="" value="{{data3}}">
+<input id="json_rel" type="hidden" name="" value="{{rel3}}">
+
+<!-- onload - draw() en body de base.html -->
+<div class="col-lg-12 col-md-12 snresultados-nodos">
+    <h3>Lo sentimos</h3>
+    <h5>[ No se han generado coincidencias ]</h5>
+</div>
+<div class="container nodos-container">
+
+    <!-- Nodos -->
+    <div style="background-color: #F1EFEF;" id="mynetwork"></div>
+    <pre id="eventSpan"></pre>
+
+    <!-- Error de búsqueda -->
+    <div id="bad"></div>
+
+</div>
+      
+{% endblock content%}
+
+
